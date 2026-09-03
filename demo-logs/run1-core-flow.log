@@ -1,0 +1,1816 @@
+Mode: local-bridge via beckn-router (payloads patched in tmpdir)
+Patched 9 sourceDescription URL(s) → beckn-processed.yaml (schema validation enabled)
+
+    [33m╔[33m═══════════════════════════════════════════════════════[33m╗[39m
+    [33m║                                                       ║[39m
+    [33m║[39m  A new version of [36mRedocly CLI[39m ([32m2.51.1[39m) is available.  [33m║[39m
+    [33m║[39m  Update now: `[36mnpm i -g @redocly/cli@latest[39m`.          [33m║[39m
+    [33m║[39m  Changelog: https://redocly.com/docs/cli/changelog/   [33m║[39m
+    [33m║                                                       ║[39m
+    [33m╚[33m═══════════════════════════════════════════════════════[33m╝[39m
+
+[90m────────────────────────────────────────────────────────────────────────────────[39m 
+ 
+  [1mRunning workflow[22m [34mp2p-trading-ies-wave2.arazzo.yaml / publish-catalog[39m 
+ 
+  [32m✓[39m [34mPOST [37m/catalog/publish[34m [34m- step[34m [37m[1mpublish-catalog[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8082/bpp/caller/catalog/publish[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bap-key-001|ed25519",algorithm="ed25519",created="1714000000",expires="1714000600",headers="(created) (expires) digest",signature="BASE64SIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "catalog/publish",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "a1b2c3d4-e5f6-7890-abcd-ef1122334455",[39m
+[34m          "messageId": "b1c2d3e4-f5a6-7890-abcd-ef2233445566",[39m
+[34m          "timestamp": "2026-04-25T06:00:00Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "publishDirectives": [[39m
+[34m            {[39m
+[34m              "catalogId": "catalog-p2p-energy-2026-04",[39m
+[34m              "catalogType": "REGULAR",[39m
+[34m              "updateMode": "MERGE",[39m
+[34m              "visibleTo": [[39m
+[34m                "indiaenergystack.in/test-ies-p2p-trading-network"[39m
+[34m              ][39m
+[34m            }[39m
+[34m          ],[39m
+[34m          "catalogs": [[39m
+[34m            {[39m
+[34m              "id": "catalog-p2p-energy-2026-04",[39m
+[34m              "descriptor": {[39m
+[34m                "name": "Inter-Discom P2P Solar Energy",[39m
+[34m                "shortDesc": "Rooftop solar energy from prosumers, traded across discoms"[39m
+[34m              },[39m
+[34m              "bppId": "sellerapp.example.com",[39m
+[34m              "bppUri": "http://sellerapp.example.com/bpp/receiver",[39m
+[34m              "provider": {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "descriptor": {[39m
+[34m                  "name": "Prosumer Solar Farm - North Delhi"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              "resources": [[39m
+[34m                {[39m
+[34m                  "id": "energy-resource-solar-001",[39m
+[34m                  "descriptor": {[39m
+[34m                    "name": "Solar energy - 2026-04-26 10:00-12:00 IST (2 hourly slots)",[39m
+[34m                    "shortDesc": "Up to 30 kWh @ 12 INR/kWh (slot 0) and 25 kWh @ 14 INR/kWh (slot 1)"[39m
+[34m                  },[39m
+[34m                  "resourceAttributes": {[39m
+[34m                    "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                    "@type": "EnergyResource",[39m
+[34m                    "type": "SOLAR",[39m
+[34m                    "id": "TEST_METER_SELLER_001"[39m
+[34m                  }[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "offers": [[39m
+[34m                {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "descriptor": {[39m
+[34m                    "name": "Morning Solar - 2 hourly slots from 10:00 IST",[39m
+[34m                    "shortDesc": "12 INR/kWh (slot 0) and 14 INR/kWh (slot 1)"[39m
+[34m                  },[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ],[39m
+[34m                  "availableTo": [],[39m
+[34m                  "offerAttributes": {[39m
+[34m                    "@context": "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m                    "@type": "EnergyTradeOffer",[39m
+[34m                    "validityWindow": {[39m
+[34m                      "@type": "beckn:TimePeriod",[39m
+[34m                      "schema:startTime": "2026-04-25T06:00:00Z",[39m
+[34m                      "schema:endTime": "2026-04-26T00:30:00Z"[39m
+[34m                    },[39m
+[34m                    "contractAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m                      "@type": "DEGContract",[39m
+[34m                      "roles": [[39m
+[34m                        {[39m
+[34m                          "role": "buyerPlatform",[39m
+[34m                          "participantId": null[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "role": "sellerPlatform",[39m
+[34m                          "participantId": "sellerapp.example.com"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "role": "buyerDiscom",[39m
+[34m                          "participantId": null[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "role": "sellerDiscom",[39m
+[34m                          "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                        }[39m
+[34m                      ],[39m
+[34m                      "policy": {[39m
+[34m                        "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                        "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m                      }[39m
+[34m                    },[39m
+[34m                    "participants": [[39m
+[34m                      {[39m
+[34m                        "id": "sellerapp.example.com",[39m
+[34m                        "participantAttributes": {[39m
+[34m                          "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                          "@type": "EnergyCustomer",[39m
+[34m                          "meterId": "TEST_METER_SELLER_001",[39m
+[34m                          "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                          "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                        }[39m
+[34m                      },[39m
+[34m                      {[39m
+[34m                        "id": "TEST_DISCOM_SELLER",[39m
+[34m                        "participantAttributes": {[39m
+[34m                          "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                          "@type": "DiscomLedgerProvider",[39m
+[34m                          "discomId": "seller-discom.example.com",[39m
+[34m                          "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                          "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                          "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                        }[39m
+[34m                      }[39m
+[34m                    ],[39m
+[34m                    "commitmentAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                      "@type": "TimeSeries",[39m
+[34m                      "intervalPeriod": {[39m
+[34m                        "start": "2026-04-26T04:30:00Z",[39m
+[34m                        "duration": "PT1H"[39m
+[34m                      },[39m
+[34m                      "payloadDescriptors": [[39m
+[34m                        {[39m
+[34m                          "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "PRICE_PER_KWH",[39m
+[34m                          "currency": "INR",[39m
+[34m                          "insertedBy": "sellerPlatform"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "AVAILABLE_QTY",[39m
+[34m                          "units": "KWH",[39m
+[34m                          "insertedBy": "sellerPlatform"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "REQUESTED_QTY",[39m
+[34m                          "units": "KWH",[39m
+[34m                          "insertedBy": "buyerPlatform"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "BUYER_DISCOM_ALLOC",[39m
+[34m                          "units": "KWH",[39m
+[34m                          "insertedBy": "buyerDiscom"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "BUYER_DISCOM_STATUS",[39m
+[34m                          "units": "STRING",[39m
+[34m                          "insertedBy": "buyerDiscom"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "SELLER_DISCOM_ALLOC",[39m
+[34m                          "units": "KWH",[39m
+[34m                          "insertedBy": "sellerDiscom"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "SELLER_DISCOM_STATUS",[39m
+[34m                          "units": "STRING",[39m
+[34m                          "insertedBy": "sellerDiscom"[39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                          "payloadType": "FINAL_ALLOC",[39m
+[34m                          "units": "KWH",[39m
+[34m                          "insertedBy": "sellerDiscom"[39m
+[34m                        }[39m
+[34m                      ],[39m
+[34m                      "intervals": [[39m
+[34m                        {[39m
+[34m                          "id": 0,[39m
+[34m                          "payloads": [[39m
+[34m                            {[39m
+[34m                              "type": "PRICE_PER_KWH",[39m
+[34m                              "values": [[39m
+[34m                                12.5[39m
+[34m                              ][39m
+[34m                            },[39m
+[34m                            {[39m
+[34m                              "type": "AVAILABLE_QTY",[39m
+[34m                              "values": [[39m
+[34m                                30.5[39m
+[34m                              ][39m
+[34m                            }[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "id": 1,[39m
+[34m                          "payloads": [[39m
+[34m                            {[39m
+[34m                              "type": "PRICE_PER_KWH",[39m
+[34m                              "values": [[39m
+[34m                                14.5[39m
+[34m                              ][39m
+[34m                            },[39m
+[34m                            {[39m
+[34m                              "type": "AVAILABLE_QTY",[39m
+[34m                              "values": [[39m
+[34m                                25.5[39m
+[34m                              ][39m
+[34m                            }[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  },[39m
+[34m                  "provider": {[39m
+[34m                    "id": "sellerapp.example.com",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Prosumer Solar Farm - North Delhi"[39m
+[34m                    },[39m
+[34m                    "providerAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyCustomer",[39m
+[34m                      "meterId": "TEST_METER_SELLER_001",[39m
+[34m                      "utilityCustomerId": "TEST_CUST_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                }[39m
+[34m              ][39m
+[34m            }[39m
+[34m          ][39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m407[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33malt-svc[90m: [34mh3=":443"; ma=86400[90m[0m
+      [33mcf-cache-status[90m: [34mDYNAMIC[90m[0m
+      [33mcf-ray[90m: [34ma35729ec0efe5b70-MAA[90m[0m
+      [33mcontent-encoding[90m: [34mgzip[90m[0m
+      [33mcontent-length[90m: [34m91[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:31 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-o7LgtXQCH2g3/R/mudyG7lHnAL8"[90m[0m
+      [33mnel[90m: [34m{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mreport-to[90m: [34m{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ZkmuFIciAsjoqj85q8sx%2BgDXt6iEuAtj1FQLXHcHZstUQWLcD2CLFRA%2BgiuWxBaPnK2aEqs8blPoI%2B%2F49uXbwIFt4%2F5NpEg8wV%2BYGWFuYHzXAXMqYfdobHFz7xoL0UI3x7DJVw%3D%3D"}]}[90m[0m
+      [33mserver[90m: [34mcloudflare[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=15552000; includeSubDomains[90m[0m
+      [33mvia[90m: [34mkong/3.3.1[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-kong-proxy-latency[90m: [34m8[90m[0m
+      [33mx-kong-upstream-latency[90m: [34m5[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m91[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "b1c2d3e4-f5a6-7890-abcd-ef2233445566"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 400, 401, 403, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+[90m────────────────────────────────────────────────────────────────────────────────[39m 
+ 
+  [1mRunning workflow[22m [34mp2p-trading-ies-wave2.arazzo.yaml / discover[39m 
+ 
+  [32m✓[39m [34mPOST [37m/discover[34m [34m- step[34m [37m[1mdiscover[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8081/bap/caller/discover[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bap-key-001|ed25519",algorithm="ed25519",created="1714000000",expires="1714000600",headers="(created) (expires) digest",signature="BASE64SIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "discover",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "258ed231-2def-4840-86ed-2970320c2294",[39m
+[34m          "timestamp": "2026-04-25T09:00:00Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "intent": {[39m
+[34m            "filters": {[39m
+[34m              "type": "jsonpath",[39m
+[34m              "expression": "$.catalogs[*].offers[*] ? (@.offerAttributes.\"@type\" == \"EnergyTradeOffer\")"[39m
+[34m            }[39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m85[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33mcontent-encoding[90m: [34mgzip[90m[0m
+      [33mcontent-length[90m: [34m98[90m[0m
+      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:31 GMT[90m[0m
+      [33mserver[90m: [34mopenresty[90m[0m
+      [33msignature[90m: [34mSignature keyId="fabric.nfh.global|76EU7MkGrGYihvxyoPzWevdYU7UAL4PPQ8PfXuGRHNyEFG33mWHs2m|ed25519",algorithm="ed25519",created="1788463771",expires="1788464071",headers="(created) (expires) digest request-signature",signature="wXoRcVowtgTF/JdO+Da1/eRH4Nh/u0tBFrHMIioOeJQAWUofOLbiZK0HLvkobIMjEStfD4YYi1QKMcZM7whEDg=="[90m[0m
+      [33mvary[90m: [34maccept-encoding[90m[39m[0m
+[90m    Response Size: [34m98[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "258ed231-2def-4840-86ed-2970320c2294"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 202, 400, 401, 403, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+[90m────────────────────────────────────────────────────────────────────────────────[39m 
+ 
+  [1mRunning workflow[22m [34mp2p-trading-ies-wave2.arazzo.yaml / select-through-settlement[39m 
+ 
+  [32m✓[39m [34mPOST [37m/init[34m [34m- step[34m [37m[1minit[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8081/bap/caller/init[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bap-key-001|ed25519",algorithm="ed25519",created="1714000000",expires="1714000600",headers="(created) (expires) digest",signature="BASE64SIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "init",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "d87a9552-d8b5-4406-a514-3268503f44c8",[39m
+[34m          "timestamp": "2026-04-25T10:05:00Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "contract": {[39m
+[34m            "status": {[39m
+[34m              "code": "DRAFT"[39m
+[34m            },[39m
+[34m            "commitments": [[39m
+[34m              {[39m
+[34m                "id": "commitment-p2p-001",[39m
+[34m                "status": {[39m
+[34m                  "descriptor": {[39m
+[34m                    "code": "DRAFT"[39m
+[34m                  }[39m
+[34m                },[39m
+[34m                "resources": [[39m
+[34m                  {[39m
+[34m                    "id": "energy-resource-solar-001",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Solar energy slot - 2026-04-26 10:00-12:00 IST"[39m
+[34m                    },[39m
+[34m                    "quantity": {[39m
+[34m                      "@type": "Quantity",[39m
+[34m                      "unitCode": "KWH",[39m
+[34m                      "unitQuantity": 35[39m
+[34m                    },[39m
+[34m                    "resourceAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyResource",[39m
+[34m                      "type": "SOLAR",[39m
+[34m                      "id": "TEST_METER_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                ],[39m
+[34m                "offer": {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ][39m
+[34m                },[39m
+[34m                "commitmentAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                  "@type": "TimeSeries",[39m
+[34m                  "intervalPeriod": {[39m
+[34m                    "start": "2026-04-26T04:30:00Z",[39m
+[34m                    "duration": "PT1H"[39m
+[34m                  },[39m
+[34m                  "payloadDescriptors": [[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "PRICE_PER_KWH",[39m
+[34m                      "currency": "INR",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "AVAILABLE_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "REQUESTED_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerPlatform"[39m
+[34m                    }[39m
+[34m                  ],[39m
+[34m                  "intervals": [[39m
+[34m                    {[39m
+[34m                      "id": 0,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            12.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "AVAILABLE_QTY",[39m
+[34m                          "values": [[39m
+[34m                            30.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            20.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "id": 1,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            14.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "AVAILABLE_QTY",[39m
+[34m                          "values": [[39m
+[34m                            25.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            15.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "contractAttributes": {[39m
+[34m              "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m              "@type": "DEGContract",[39m
+[34m              "roles": [[39m
+[34m                {[39m
+[34m                  "role": "buyerPlatform",[39m
+[34m                  "participantId": "buyerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerPlatform",[39m
+[34m                  "participantId": "sellerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "buyerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_BUYER"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "policy": {[39m
+[34m                "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m              }[39m
+[34m            },[39m
+[34m            "participants": [[39m
+[34m              {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_SELLER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                  "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "buyerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_BUYER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_BUYER_001",[39m
+[34m                  "platformUrl": "http://buyerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_BUYER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "buyer-discom.example.com",[39m
+[34m                  "discomUri": "http://buyer-discom.example.com:9000",[39m
+[34m                  "ledgerId": "buyer-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://buyer-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_SELLER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "seller-discom.example.com",[39m
+[34m                  "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                  "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ][39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m44[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33maccess-control-allow-origin[90m: [34m*[90m[0m
+      [33mcontent-length[90m: [34m79[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:32 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-eZWbuD2BSn85d1/Cx7msLbQacz4"[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=31536000; includeSubDomains[90m[0m
+      [33mvia[90m: [34m1.1 Caddy[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m79[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "d87a9552-d8b5-4406-a514-3268503f44c8"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 202, 400, 401, 403, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+  [32m✓[39m [34mPOST [37m/on_init[34m [34m- step[34m [37m[1mon-init[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8082/bpp/caller/on_init[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bpp-key-001|ed25519",algorithm="ed25519",created="1714000060",expires="1714000660",headers="(created) (expires) digest request-signature",signature="BPPSIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "on_init",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "22e181e7-3050-44f8-8146-a107bb2ce940",[39m
+[34m          "timestamp": "2026-04-25T10:05:05Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "contract": {[39m
+[34m            "status": {[39m
+[34m              "code": "DRAFT"[39m
+[34m            },[39m
+[34m            "commitments": [[39m
+[34m              {[39m
+[34m                "id": "commitment-p2p-001",[39m
+[34m                "status": {[39m
+[34m                  "descriptor": {[39m
+[34m                    "code": "DRAFT"[39m
+[34m                  }[39m
+[34m                },[39m
+[34m                "resources": [[39m
+[34m                  {[39m
+[34m                    "id": "energy-resource-solar-001",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Solar energy slot - 2026-04-26 10:00-12:00 IST"[39m
+[34m                    },[39m
+[34m                    "quantity": {[39m
+[34m                      "@type": "Quantity",[39m
+[34m                      "unitCode": "KWH",[39m
+[34m                      "unitQuantity": 35[39m
+[34m                    },[39m
+[34m                    "resourceAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyResource",[39m
+[34m                      "type": "SOLAR",[39m
+[34m                      "id": "TEST_METER_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                ],[39m
+[34m                "offer": {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ][39m
+[34m                },[39m
+[34m                "commitmentAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                  "@type": "TimeSeries",[39m
+[34m                  "intervalPeriod": {[39m
+[34m                    "start": "2026-04-26T04:30:00Z",[39m
+[34m                    "duration": "PT1H"[39m
+[34m                  },[39m
+[34m                  "payloadDescriptors": [[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "PRICE_PER_KWH",[39m
+[34m                      "currency": "INR",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "REQUESTED_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerPlatform"[39m
+[34m                    }[39m
+[34m                  ],[39m
+[34m                  "intervals": [[39m
+[34m                    {[39m
+[34m                      "id": 0,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            12.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            20.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "id": 1,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            14.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            15.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "contractAttributes": {[39m
+[34m              "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m              "@type": "DEGContract",[39m
+[34m              "roles": [[39m
+[34m                {[39m
+[34m                  "role": "buyerPlatform",[39m
+[34m                  "participantId": "buyerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerPlatform",[39m
+[34m                  "participantId": "sellerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "buyerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_BUYER"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "policy": {[39m
+[34m                "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m              }[39m
+[34m            },[39m
+[34m            "participants": [[39m
+[34m              {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_SELLER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                  "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "buyerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_BUYER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_BUYER_001",[39m
+[34m                  "platformUrl": "http://buyerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_BUYER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "buyer-discom.example.com",[39m
+[34m                  "discomUri": "http://buyer-discom.example.com:9000",[39m
+[34m                  "ledgerId": "buyer-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://buyer-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_SELLER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "seller-discom.example.com",[39m
+[34m                  "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                  "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "settlements": [[39m
+[34m              {[39m
+[34m                "id": "settlement-p2p-001",[39m
+[34m                "status": "DRAFT",[39m
+[34m                "settlementAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld",[39m
+[34m                  "@type": "SettlementTerm",[39m
+[34m                  "payTo": {[39m
+[34m                    "accountHolderName": "Seller Platform Pvt Ltd",[39m
+[34m                    "accountNumber": "0012345678901",[39m
+[34m                    "branchCode": "HDFC0001234",[39m
+[34m                    "bankName": "HDFC Bank"[39m
+[34m                  },[39m
+[34m                  "acceptedPaymentMethods": [[39m
+[34m                    "BANK_TRANSFER"[39m
+[34m                  ],[39m
+[34m                  "paymentTrigger": "ON_FULFILLMENT",[39m
+[34m                  "settlementStatus": "PENDING"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ][39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m77[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33maccess-control-allow-origin[90m: [34m*[90m[0m
+      [33mcontent-length[90m: [34m79[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:32 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-zdAlcgKodfza3v/abBWPr4MCjsg"[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=31536000; includeSubDomains[90m[0m
+      [33mvia[90m: [34m1.1 Caddy[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m79[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "22e181e7-3050-44f8-8146-a107bb2ce940"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 400, 401, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+  [32m✓[39m [34mPOST [37m/confirm[34m [34m- step[34m [37m[1mconfirm[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8081/bap/caller/confirm[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bap-key-001|ed25519",algorithm="ed25519",created="1714000000",expires="1714000600",headers="(created) (expires) digest",signature="BASE64SIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "confirm",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "54fb3f15-48aa-4408-bca4-52486b767679",[39m
+[34m          "timestamp": "2026-04-25T10:10:00Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "contract": {[39m
+[34m            "status": {[39m
+[34m              "code": "DRAFT"[39m
+[34m            },[39m
+[34m            "commitments": [[39m
+[34m              {[39m
+[34m                "id": "commitment-p2p-001",[39m
+[34m                "status": {[39m
+[34m                  "descriptor": {[39m
+[34m                    "code": "DRAFT"[39m
+[34m                  }[39m
+[34m                },[39m
+[34m                "resources": [[39m
+[34m                  {[39m
+[34m                    "id": "energy-resource-solar-001",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Solar energy slot - 2026-04-26 10:00-12:00 IST"[39m
+[34m                    },[39m
+[34m                    "quantity": {[39m
+[34m                      "@type": "Quantity",[39m
+[34m                      "unitCode": "KWH",[39m
+[34m                      "unitQuantity": 35[39m
+[34m                    },[39m
+[34m                    "resourceAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyResource",[39m
+[34m                      "type": "SOLAR",[39m
+[34m                      "id": "TEST_METER_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                ],[39m
+[34m                "offer": {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ][39m
+[34m                },[39m
+[34m                "commitmentAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                  "@type": "TimeSeries",[39m
+[34m                  "intervalPeriod": {[39m
+[34m                    "start": "2026-04-26T04:30:00Z",[39m
+[34m                    "duration": "PT1H"[39m
+[34m                  },[39m
+[34m                  "payloadDescriptors": [[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "PRICE_PER_KWH",[39m
+[34m                      "currency": "INR",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "REQUESTED_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerPlatform"[39m
+[34m                    }[39m
+[34m                  ],[39m
+[34m                  "intervals": [[39m
+[34m                    {[39m
+[34m                      "id": 0,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            12.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            20.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "id": 1,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            14.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            15.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "contractAttributes": {[39m
+[34m              "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m              "@type": "DEGContract",[39m
+[34m              "roles": [[39m
+[34m                {[39m
+[34m                  "role": "buyerPlatform",[39m
+[34m                  "participantId": "buyerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerPlatform",[39m
+[34m                  "participantId": "sellerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "buyerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_BUYER"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "policy": {[39m
+[34m                "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m              }[39m
+[34m            },[39m
+[34m            "participants": [[39m
+[34m              {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_SELLER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                  "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "buyerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_BUYER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_BUYER_001",[39m
+[34m                  "platformUrl": "http://buyerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_BUYER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "buyer-discom.example.com",[39m
+[34m                  "discomUri": "http://buyer-discom.example.com:9000",[39m
+[34m                  "ledgerId": "buyer-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://buyer-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_SELLER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "seller-discom.example.com",[39m
+[34m                  "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                  "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "settlements": [[39m
+[34m              {[39m
+[34m                "id": "settlement-p2p-001",[39m
+[34m                "status": "DRAFT",[39m
+[34m                "settlementAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld",[39m
+[34m                  "@type": "SettlementTerm",[39m
+[34m                  "payTo": {[39m
+[34m                    "accountHolderName": "Seller Platform Pvt Ltd",[39m
+[34m                    "accountNumber": "0012345678901",[39m
+[34m                    "branchCode": "HDFC0001234",[39m
+[34m                    "bankName": "HDFC Bank"[39m
+[34m                  },[39m
+[34m                  "acceptedPaymentMethods": [[39m
+[34m                    "BANK_TRANSFER"[39m
+[34m                  ],[39m
+[34m                  "paymentTrigger": "ON_FULFILLMENT",[39m
+[34m                  "settlementStatus": "PENDING"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ][39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m47[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33maccess-control-allow-origin[90m: [34m*[90m[0m
+      [33mcontent-length[90m: [34m79[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:32 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-zE1t1rxlMQdT1q9k42++BOXDPFs"[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=31536000; includeSubDomains[90m[0m
+      [33mvia[90m: [34m1.1 Caddy[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m79[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "54fb3f15-48aa-4408-bca4-52486b767679"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 202, 400, 401, 403, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+  [32m✓[39m [34mPOST [37m/on_confirm[34m [34m- step[34m [37m[1mon-confirm[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8082/bpp/caller/on_confirm[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bpp-key-001|ed25519",algorithm="ed25519",created="1714000060",expires="1714000660",headers="(created) (expires) digest request-signature",signature="BPPSIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "on_confirm",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "42306920-2f41-44b4-bd0a-bb1b969b9b6b",[39m
+[34m          "timestamp": "2026-04-25T10:10:05Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "contract": {[39m
+[34m            "status": {[39m
+[34m              "code": "ACTIVE"[39m
+[34m            },[39m
+[34m            "commitments": [[39m
+[34m              {[39m
+[34m                "id": "commitment-p2p-001",[39m
+[34m                "status": {[39m
+[34m                  "descriptor": {[39m
+[34m                    "code": "ACTIVE"[39m
+[34m                  }[39m
+[34m                },[39m
+[34m                "resources": [[39m
+[34m                  {[39m
+[34m                    "id": "energy-resource-solar-001",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Solar energy slot - 2026-04-26 10:00-12:00 IST"[39m
+[34m                    },[39m
+[34m                    "quantity": {[39m
+[34m                      "@type": "Quantity",[39m
+[34m                      "unitCode": "KWH",[39m
+[34m                      "unitQuantity": 35[39m
+[34m                    },[39m
+[34m                    "resourceAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyResource",[39m
+[34m                      "type": "SOLAR",[39m
+[34m                      "id": "TEST_METER_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                ],[39m
+[34m                "offer": {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ][39m
+[34m                },[39m
+[34m                "commitmentAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                  "@type": "TimeSeries",[39m
+[34m                  "intervalPeriod": {[39m
+[34m                    "start": "2026-04-26T04:30:00Z",[39m
+[34m                    "duration": "PT1H"[39m
+[34m                  },[39m
+[34m                  "payloadDescriptors": [[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "PRICE_PER_KWH",[39m
+[34m                      "currency": "INR",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "REQUESTED_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerPlatform"[39m
+[34m                    }[39m
+[34m                  ],[39m
+[34m                  "intervals": [[39m
+[34m                    {[39m
+[34m                      "id": 0,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            12.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            20.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "id": 1,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            14.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            15.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "contractAttributes": {[39m
+[34m              "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m              "@type": "DEGContract",[39m
+[34m              "roles": [[39m
+[34m                {[39m
+[34m                  "role": "buyerPlatform",[39m
+[34m                  "participantId": "buyerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerPlatform",[39m
+[34m                  "participantId": "sellerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "buyerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_BUYER"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "policy": {[39m
+[34m                "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m              }[39m
+[34m            },[39m
+[34m            "participants": [[39m
+[34m              {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_SELLER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                  "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "buyerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_BUYER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_BUYER_001",[39m
+[34m                  "platformUrl": "http://buyerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_BUYER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "buyer-discom.example.com",[39m
+[34m                  "discomUri": "http://buyer-discom.example.com:9000",[39m
+[34m                  "ledgerId": "buyer-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://buyer-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_SELLER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "seller-discom.example.com",[39m
+[34m                  "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                  "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "id": "contract-p2p-001",[39m
+[34m            "settlements": [[39m
+[34m              {[39m
+[34m                "id": "settlement-p2p-001",[39m
+[34m                "status": "COMMITTED",[39m
+[34m                "settlementAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld",[39m
+[34m                  "@type": "SettlementTerm",[39m
+[34m                  "payTo": {[39m
+[34m                    "accountHolderName": "Seller Platform Pvt Ltd",[39m
+[34m                    "accountNumber": "0012345678901",[39m
+[34m                    "branchCode": "HDFC0001234",[39m
+[34m                    "bankName": "HDFC Bank"[39m
+[34m                  },[39m
+[34m                  "acceptedPaymentMethods": [[39m
+[34m                    "BANK_TRANSFER"[39m
+[34m                  ],[39m
+[34m                  "paymentTrigger": "ON_FULFILLMENT",[39m
+[34m                  "settlementStatus": "PENDING"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ][39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m78[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33maccess-control-allow-origin[90m: [34m*[90m[0m
+      [33mcontent-length[90m: [34m79[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:32 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-wI21Z0g8UI9IdJL/o5d5YaADRYw"[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=31536000; includeSubDomains[90m[0m
+      [33mvia[90m: [34m1.1 Caddy[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m79[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "42306920-2f41-44b4-bd0a-bb1b969b9b6b"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 400, 401, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+  [32m✓[39m [34mPOST [37m/on_status[34m [34m- step[34m [37m[1mon-status-settled[22m[34m[39m 
+[0m
+[90m    Request URL: [34mhttp://localhost:8082/bpp/caller/on_status[90m[39m[0m
+[90m    Request Headers:[39m[0m
+[90m      [33mcontent-type[90m: [34mapplication/json[90m[0m
+      [33maccept[90m: [34mapplication/json[90m[0m
+      [33mauthorization[90m: [34mSignature keyId="example.ns/gro.example/bpp-key-001|ed25519",algorithm="ed25519",created="1714000060",expires="1714000660",headers="(created) (expires) digest request-signature",signature="BPPSIGNATURE=="[90m[39m[0m
+[90m    Request Body:[39m[0m
+[34m      {[39m
+[34m        "context": {[39m
+[34m          "networkId": "indiaenergystack.in/test-ies-p2p-trading-network",[39m
+[34m          "version": "2.0.0",[39m
+[34m          "action": "on_status",[39m
+[34m          "bapId": "buyerapp.example.com",[39m
+[34m          "bapUri": "http://buyerapp.example.com:9000/bap/receiver",[39m
+[34m          "bppId": "sellerapp.example.com",[39m
+[34m          "bppUri": "http://sellerapp.example.com:9000/bpp/receiver",[39m
+[34m          "transactionId": "1268c204-675b-4adb-9321-b08231b147b2",[39m
+[34m          "messageId": "acd9569e-7656-44f5-b5dd-b8f172593b3a",[39m
+[34m          "timestamp": "2026-04-26T06:30:00Z",[39m
+[34m          "schemaContext": [[39m
+[34m            "https://schema.nfh.global/EnergyTradeOffer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/RevenueFlow/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld",[39m
+[34m            "https://schema.nfh.global/PaymentAction/v2.0/context.jsonld"[39m
+[34m          ][39m
+[34m        },[39m
+[34m        "message": {[39m
+[34m          "contract": {[39m
+[34m            "id": "contract-p2p-001",[39m
+[34m            "status": {[39m
+[34m              "code": "COMPLETE"[39m
+[34m            },[39m
+[34m            "commitments": [[39m
+[34m              {[39m
+[34m                "id": "commitment-p2p-001",[39m
+[34m                "status": {[39m
+[34m                  "descriptor": {[39m
+[34m                    "code": "CLOSED"[39m
+[34m                  }[39m
+[34m                },[39m
+[34m                "resources": [[39m
+[34m                  {[39m
+[34m                    "id": "energy-resource-solar-001",[39m
+[34m                    "descriptor": {[39m
+[34m                      "name": "Solar energy slot - 2026-04-26 10:00-12:00 IST"[39m
+[34m                    },[39m
+[34m                    "quantity": {[39m
+[34m                      "@type": "Quantity",[39m
+[34m                      "unitCode": "KWH",[39m
+[34m                      "unitQuantity": 35[39m
+[34m                    },[39m
+[34m                    "resourceAttributes": {[39m
+[34m                      "@context": "https://schema.nfh.global/EnergyResource/v2.0/context.jsonld",[39m
+[34m                      "@type": "EnergyResource",[39m
+[34m                      "type": "SOLAR",[39m
+[34m                      "id": "TEST_METER_SELLER_001"[39m
+[34m                    }[39m
+[34m                  }[39m
+[34m                ],[39m
+[34m                "offer": {[39m
+[34m                  "id": "offer-p2p-001",[39m
+[34m                  "resourceIds": [[39m
+[34m                    "energy-resource-solar-001"[39m
+[34m                  ][39m
+[34m                },[39m
+[34m                "commitmentAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/BecknTimeSeries/v1.0/context.jsonld",[39m
+[34m                  "@type": "TimeSeries",[39m
+[34m                  "intervalPeriod": {[39m
+[34m                    "start": "2026-04-26T04:30:00Z",[39m
+[34m                    "duration": "PT1H"[39m
+[34m                  },[39m
+[34m                  "payloadDescriptors": [[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "PRICE_PER_KWH",[39m
+[34m                      "currency": "INR",[39m
+[34m                      "insertedBy": "sellerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "EVENT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "REQUESTED_QTY",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerPlatform"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "BUYER_DISCOM_ALLOC",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "buyerDiscom"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "BUYER_DISCOM_STATUS",[39m
+[34m                      "units": "STRING",[39m
+[34m                      "insertedBy": "buyerDiscom"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "SELLER_DISCOM_ALLOC",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "sellerDiscom"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "SELLER_DISCOM_STATUS",[39m
+[34m                      "units": "STRING",[39m
+[34m                      "insertedBy": "sellerDiscom"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "objectType": "REPORT_PAYLOAD_DESCRIPTOR",[39m
+[34m                      "payloadType": "FINAL_ALLOC",[39m
+[34m                      "units": "KWH",[39m
+[34m                      "insertedBy": "sellerDiscom"[39m
+[34m                    }[39m
+[34m                  ],[39m
+[34m                  "intervals": [[39m
+[34m                    {[39m
+[34m                      "id": 0,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            12.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            20.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "BUYER_DISCOM_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            18.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "BUYER_DISCOM_STATUS",[39m
+[34m                          "values": [[39m
+[34m                            "COMPLETED"[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "SELLER_DISCOM_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            19.2[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "SELLER_DISCOM_STATUS",[39m
+[34m                          "values": [[39m
+[34m                            "COMPLETED"[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "FINAL_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            18.5[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "id": 1,[39m
+[34m                      "payloads": [[39m
+[34m                        {[39m
+[34m                          "type": "PRICE_PER_KWH",[39m
+[34m                          "values": [[39m
+[34m                            14.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "REQUESTED_QTY",[39m
+[34m                          "values": [[39m
+[34m                            15.5[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "BUYER_DISCOM_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            14.2[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "BUYER_DISCOM_STATUS",[39m
+[34m                          "values": [[39m
+[34m                            "COMPLETED"[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "SELLER_DISCOM_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            14.7[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "SELLER_DISCOM_STATUS",[39m
+[34m                          "values": [[39m
+[34m                            "COMPLETED"[39m
+[34m                          ][39m
+[34m                        },[39m
+[34m                        {[39m
+[34m                          "type": "FINAL_ALLOC",[39m
+[34m                          "values": [[39m
+[34m                            14.2[39m
+[34m                          ][39m
+[34m                        }[39m
+[34m                      ][39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "contractAttributes": {[39m
+[34m              "@context": "https://schema.nfh.global/DEGContract/v2.0/context.jsonld",[39m
+[34m              "@type": "DEGContract",[39m
+[34m              "roles": [[39m
+[34m                {[39m
+[34m                  "role": "buyerPlatform",[39m
+[34m                  "participantId": "buyerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerPlatform",[39m
+[34m                  "participantId": "sellerapp.example.com"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "buyerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_BUYER"[39m
+[34m                },[39m
+[34m                {[39m
+[34m                  "role": "sellerDiscom",[39m
+[34m                  "participantId": "TEST_DISCOM_SELLER"[39m
+[34m                }[39m
+[34m              ],[39m
+[34m              "policy": {[39m
+[34m                "url": "https://api.dedi.global/dedi/lookup/indiaenergystack.in/ies-rulesets/p2p-trading-ies-contractpolicy-common",[39m
+[34m                "queryPath": "data.deg.contracts.p2p_trading"[39m
+[34m              }[39m
+[34m            },[39m
+[34m            "participants": [[39m
+[34m              {[39m
+[34m                "id": "sellerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_SELLER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_SELLER_001",[39m
+[34m                  "platformUrl": "http://sellerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "buyerapp.example.com",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/EnergyCustomer/v2.0/context.jsonld",[39m
+[34m                  "@type": "EnergyCustomer",[39m
+[34m                  "meterId": "TEST_METER_BUYER_001",[39m
+[34m                  "utilityCustomerId": "TEST_CUST_BUYER_001",[39m
+[34m                  "platformUrl": "http://buyerapp.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_BUYER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "buyer-discom.example.com",[39m
+[34m                  "discomUri": "http://buyer-discom.example.com:9000",[39m
+[34m                  "ledgerId": "buyer-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://buyer-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "TEST_DISCOM_SELLER",[39m
+[34m                "participantAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/DiscomLedgerProvider/v1.0/context.jsonld",[39m
+[34m                  "@type": "DiscomLedgerProvider",[39m
+[34m                  "discomId": "seller-discom.example.com",[39m
+[34m                  "discomUri": "http://seller-discom.example.com:9000",[39m
+[34m                  "ledgerId": "seller-discom-ledger.example.com",[39m
+[34m                  "ledgerUri": "http://seller-discom-ledger.example.com:9000"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "consideration": [[39m
+[34m              {[39m
+[34m                "id": "auto-settlement-flows",[39m
+[34m                "considerationAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/RevenueFlow/v2.0/context.jsonld",[39m
+[34m                  "@type": "RevenueFlow",[39m
+[34m                  "revenueFlows": [[39m
+[34m                    {[39m
+[34m                      "role": "sellerPlatform",[39m
+[34m                      "value": 437.15,[39m
+[34m                      "currency": "INR",[39m
+[34m                      "description": "Energy sale proceeds (18.5 kWh × ₹12.5 + 14.2 kWh × ₹14.5)"[39m
+[34m                    },[39m
+[34m                    {[39m
+[34m                      "role": "buyerPlatform",[39m
+[34m                      "value": -437.15,[39m
+[34m                      "currency": "INR",[39m
+[34m                      "description": "Energy purchase cost (18.5 kWh × ₹12.5 + 14.2 kWh × ₹14.5)"[39m
+[34m                    }[39m
+[34m                  ][39m
+[34m                }[39m
+[34m              }[39m
+[34m            ],[39m
+[34m            "settlements": [[39m
+[34m              {[39m
+[34m                "id": "settlement-p2p-001",[39m
+[34m                "considerationId": "auto-settlement-flows",[39m
+[34m                "status": "COMPLETE",[39m
+[34m                "settlementAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/SettlementTerm/v2.0/context.jsonld",[39m
+[34m                  "@type": "SettlementTerm",[39m
+[34m                  "payTo": {[39m
+[34m                    "accountHolderName": "Seller Platform Pvt Ltd",[39m
+[34m                    "accountNumber": "0012345678901",[39m
+[34m                    "branchCode": "HDFC0001234",[39m
+[34m                    "bankName": "HDFC Bank"[39m
+[34m                  },[39m
+[34m                  "acceptedPaymentMethods": [[39m
+[34m                    "BANK_TRANSFER"[39m
+[34m                  ],[39m
+[34m                  "paymentTrigger": "ON_FULFILLMENT",[39m
+[34m                  "settlementStatus": "COMPLETE"[39m
+[34m                }[39m
+[34m              },[39m
+[34m              {[39m
+[34m                "id": "payment-p2p-001",[39m
+[34m                "considerationId": "auto-settlement-flows",[39m
+[34m                "status": "COMPLETE",[39m
+[34m                "settlementAttributes": {[39m
+[34m                  "@context": "https://schema.nfh.global/PaymentAction/v2.0/context.jsonld",[39m
+[34m                  "@type": "PaymentAction",[39m
+[34m                  "amount": {[39m
+[34m                    "currency": "INR",[39m
+[34m                    "value": 437.15[39m
+[34m                  },[39m
+[34m                  "paymentMethod": {[39m
+[34m                    "method": "BANK_TRANSFER"[39m
+[34m                  },[39m
+[34m                  "paymentStatus": "SETTLED",[39m
+[34m                  "txnRef": "TXN-P2P-001-SETTLED",[39m
+[34m                  "paidAt": "2026-04-26T07:30:00Z"[39m
+[34m                }[39m
+[34m              }[39m
+[34m            ][39m
+[34m          }[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+[0m
+[90m    Response status code: [34m200[90m[39m[0m
+[90m    Response time: [34m27[90m ms[39m[0m
+[90m    Response Headers:[39m
+[90m      [33maccess-control-allow-origin[90m: [34m*[90m[0m
+      [33mcontent-length[90m: [34m79[90m[0m
+      [33mcontent-security-policy[90m: [34mdefault-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests[90m[0m
+      [33mcontent-type[90m: [34mapplication/json; charset=utf-8[90m[0m
+      [33mcross-origin-opener-policy[90m: [34msame-origin[90m[0m
+      [33mcross-origin-resource-policy[90m: [34msame-origin[90m[0m
+      [33mdate[90m: [34mThu, 03 Sep 2026 19:29:32 GMT[90m[0m
+      [33metag[90m: [34mW/"4f-aln8pDuZY46eLa5WYtOW/vC76y0"[90m[0m
+      [33morigin-agent-cluster[90m: [34m?1[90m[0m
+      [33mreferrer-policy[90m: [34mno-referrer[90m[0m
+      [33mstrict-transport-security[90m: [34mmax-age=31536000; includeSubDomains[90m[0m
+      [33mvia[90m: [34m1.1 Caddy[90m[0m
+      [33mx-content-type-options[90m: [34mnosniff[90m[0m
+      [33mx-dns-prefetch-control[90m: [34moff[90m[0m
+      [33mx-download-options[90m: [34mnoopen[90m[0m
+      [33mx-frame-options[90m: [34mSAMEORIGIN[90m[0m
+      [33mx-permitted-cross-domain-policies[90m: [34mnone[90m[0m
+      [33mx-xss-protection[90m: [34m0[90m[39m[0m
+[90m    Response Size: [34m79[90m bytes[39m[0m
+[90m    Response Body:[39m[0m
+[34m      {[39m
+[34m        "message": {[39m
+[34m          "status": "ACK",[39m
+[34m          "messageId": "acd9569e-7656-44f5-b5dd-b8f172593b3a"[39m
+[34m        }[39m
+[34m      }[39m 
+ 
+    [32m✓[39m [90mstatus code check[39m - [32m$statusCode in [200, 400, 401, 429, 500][39m
+    [32m✓[39m [90mcontent-type check[39m
+    [32m✓[39m [90mschema check[39m
+ 
+ 
+[33m  Summary for [34mp2p-trading-ies-wave2.arazzo.yaml[33m[39m
+  
+  [1mWorkflows:[22m [32m3 passed[39m, 3 total
+  [1mSteps:[22m [32m7 passed[39m, 7 total
+  [1mChecks:[22m [32m21 passed[39m, 21 total
+  [7mTime: 1244ms[27m 
+ 
+ 
+[90m┌───────────────────────────────────────────────────────────────────────────┬────────────┬─────────┬─────────┬──────────┐[39m
+[90m│ Filename                                                                  │ Workflows  │ Passed  │ Failed  │ Warnings │[39m
+[90m├───────────────────────────────────────────────────────────────────────────┼────────────┼─────────┼─────────┼──────────┤[39m
+[90m│[39m [32m✓ p2p-trading-ies-wave2.arazzo.yaml                                       [39m[90m│[39m [90m3          [39m[90m│[39m [32m3       [39m[90m│[39m [90m-       [39m[90m│[39m [90m-        [39m[90m│[39m
+[90m└───────────────────────────────────────────────────────────────────────────┴────────────┴─────────┴─────────┴──────────┘[39m[0m
+ 
+[34m  JSON logs saved in [32mC:/Users/Sanjay/AppData/Local/Temp/p2p-trading-ies-wave2-arazzo-0SxExk/respect-output.json[34m[39m 
+ 
+
+NACK check: PASSED — all steps returned ACK.

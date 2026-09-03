@@ -1,0 +1,7 @@
+# Created by setup.sh — a sparse clone of the real beckn/DEG repo, not our content.
+DEG-repo/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp

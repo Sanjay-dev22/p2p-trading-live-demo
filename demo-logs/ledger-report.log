@@ -1,0 +1,22 @@
+
+Fetching trades from 2026-09-01T00:00:00.000Z to 2026-09-05T23:59:59.000Z...
+
+  Fetched 4 records (offset=0, total matching=4, accumulated=4)
+
+==========================================================================================
+  PLATFORM TRADE REPORT
+  Total trades in ledger: 4
+  Unique platforms: 2
+==========================================================================================
+
+  Platform                 Total    As Buyer   As Seller  Platform ID
+  -----------------------------------------------------------------------
+  buyerapp.example.com         4           4           0
+  sellerapp.example.com        4           0           4
+
+  ────────────────────────────────────────────────────────────
+  Total trade appearances: 8
+  (Each trade has a buyer platform + seller platform, so this can be up to 2× trade count)
+
+  No self-trades found (no platform appears as both buyer and seller).
+
