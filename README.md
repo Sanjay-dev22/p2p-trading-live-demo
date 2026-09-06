@@ -10,7 +10,11 @@ simulation of it.
 **This is the command-line version of the demo.** For the interactive
 visual walkthrough of the same trade (click through every hop, see every
 payload), see [github.com/Sanjay-dev22/grid-pulse](https://github.com/Sanjay-dev22/grid-pulse)
-or the hosted version at **nharuvi.com/beckn**.
+or the hosted version at **nharuvi.com/beckn**. For a version you click
+through instead of running from a terminal — two real web apps trading
+over the same real network — see
+[github.com/Sanjay-dev22/p2p-trading-demo-app](https://github.com/Sanjay-dev22/p2p-trading-demo-app),
+which also needs a lighter set of prerequisites (no Python, no Redocly).
 
 ## What this actually proves
 
