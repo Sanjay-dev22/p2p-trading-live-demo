@@ -51,6 +51,12 @@ first, then re-run the two lines above. **`$REPO_ROOT` is only remembered
 for this one terminal window** — if you open a new terminal window later,
 redo Step 0 in it before continuing.
 
+**Never type or paste a path yourself here** (e.g. one copied from File
+Explorer's address bar, which looks like `C:\Users\...` or `C:/Users/...`).
+On Git Bash, a path with a `C:` drive letter silently breaks anything that
+uses it later in this runbook, in a way that gives confusing, unrelated-
+looking errors — always let `$(pwd)` capture it, exactly as above.
+
 1. Start Docker Desktop, and wait until it says "Docker Desktop is
    running" in its own window (a steady, non-animating whale icon in your
    system tray/menu bar is the same signal).
@@ -81,6 +87,16 @@ redo Step 0 in it before continuing.
    (This shim ships inside *this* repo, at `pybin/python3` — not in any
    other folder. `$REPO_ROOT` from Step 0 is what makes this work from
    here regardless of which subfolder you're currently `cd`'d into.)
+
+   **One more thing this exact spot needs, on any machine, even one that
+   already has a real `python3`:** two Python packages the workflow runner
+   and the ledger-report script both need, that a stock Python install
+   doesn't come with:
+   ```bash
+   python3 -m pip install --quiet pyyaml cryptography
+   ```
+   This is safe to run every time, including on a machine that already has
+   them (it just confirms they're there and exits instantly).
 4. Force UTF-8 (Windows Python defaults to cp1252, breaks on the spec's own
    Unicode arrows):
    ```bash
