@@ -208,6 +208,36 @@ a previous run wasn't fully stopped — run `docker compose down` then
 Retry once — this has been transient every time it's happened, and
 self-resolves.
 
+**On a corporate/managed laptop, `python3 -m pip install pyyaml
+cryptography` fails with something mentioning it can't resolve
+`pypi.org`, and/or `./run-arazzo.sh` fails with `ModuleNotFoundError: No
+module named 'yaml'`**
+This is a real, confirmed failure mode, not something you did wrong.
+Many corporate networks block direct access to public package registries
+(PyPI, and often GitHub too) and only allow traffic through an internal
+registry mirror — the exact same reason `npm install` on some corporate
+laptops only works because `.npmrc` points it at an internal Artifactory/
+Nexus instead of the public npm registry. Two things to try, in order:
+
+1. Check whether your organization's same internal registry also mirrors
+   PyPI (very common alongside an npm mirror) — ask IT, or check for an
+   existing `pip.ini`/`PIP_INDEX_URL` your organization may already push
+   to managed laptops (`python3 -m pip config list -v` shows what pip
+   currently sees). If they give you a URL, point pip at it for this one
+   command:
+   ```bash
+   python3 -m pip install --index-url <the-internal-pypi-url> pyyaml cryptography
+   ```
+2. If there's no internal mirror and IT can't open one up, this specific
+   repo genuinely can't run on that network as-is — its tooling (this
+   Python step, and separately `raw.githubusercontent.com` for the real
+   Beckn spec) needs broader direct internet access than a locked-down
+   corporate network may allow. **The newer
+   [p2p-trading-demo-app](https://github.com/Sanjay-dev22/p2p-trading-demo-app)
+   doesn't have this problem** — it was specifically fixed to need nothing
+   beyond your organization's normal npm registry (no Python, no GitHub,
+   no PyPI at all) — switch to that one on a locked-down machine.
+
 ## Known rough edges (don't demo these, just know them for Q&A)
 - Three real bugs found and fixed locally in the devkit's own tooling
   (Windows-only): missing `mkdir` before a cache write, cp1252 vs UTF-8
